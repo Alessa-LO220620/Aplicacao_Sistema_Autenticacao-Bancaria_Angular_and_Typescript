@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>SoulBrasil Internet Banking</title>
+
+</head>
+
+
+
+<body>
+
+    <section class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="">
+            </div>
+            <ul>
+                <li>
+                    <a href="/minhaConta" aria-expanded="false">Minha Conta</a>
+                </li>
+                <li>
+                    <a href="/transferencia" aria-expanded="false">Transferir</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="content">
+            <header>
+                <div class="navbar navbar-expand-lg menu_cliente">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn  btn-info">
+                            <i class="fas fa-bars fa-5x"></i>
+                        </button>
+                        <div class="cliente_conta">
+                            <img src="/img/guts.jpg" alt="" height="40px">
+                            <div class="info_cliente">
+                               <h5><%= usuario.nomeCompleto %></h5><br>
+                               <small>Agência <%= usuario.agencia %></small><br>
+                               <small>Conta <%= usuario.conta %></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>

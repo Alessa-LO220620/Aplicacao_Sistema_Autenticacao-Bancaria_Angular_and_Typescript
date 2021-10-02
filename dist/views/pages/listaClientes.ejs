@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); %>    
+    <title>Banco</title>
+</head>
+<body>
+    <header>
+        <%- include('../partials/headerAdmin.ejs'); %>
+    </header>
+    <main>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col">
+
+                <div class="row mt-5  text-center">
+
+                    <div class="col-5 mt-5">
+                        <h1>Lista de Clientes</h1>
+                    </div>
+                    <!-- <form action="/livros/pesquisar>" class="form-inline my-2 my-lg-0 col-7">
+                        <div class=" form-group">
+                            
+                            <select class="form-control" name="tipo_pesquisa" id="tipo_pesquisa" required>Tipo Pesquisa
+                                <option value="" selected>Pesquisar por..</option>
+                                <option value="nome_Livro">Nome Livro</option>
+                                <option value="nome_Autor">Autor</option>
+                                <option value="editora">Editora</option>
+                                <option value="assunto">Assunto</option>
+                            </select>
+                        </div>
+                        <div class="">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar"
+                                aria-label="Pesquisar" id="pesquisar" name="pesquisar" value="">
+                            <button id="pesquisa" class="btn btn-success my-2 my-sm-0" type="submit"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+ -->
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Conta</th>
+                                    <th>Agência</th>
+                                    <th>Saldo</th>
+                                    <th>Tipo Usuário</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% lista_clientes.forEach(function(cliente){ %>
+                                    <tr>
+                                        <td>
+                                            <%= cliente.nomeCompleto %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.cpf %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.conta %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.agencia %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.saldo %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.tipoUsuario %>
+                                        </td>
+                                        <td>
+                                            <%= cliente.status %>
+                                        </td>
+                                        <td>
+                                            <a href="/clientes/editarCliente/<%= cliente.status%>"
+                                                class="btn btn-warning">Editar</a>
+                                            <a href="/clientes/deletarCliente/<%= cliente.status%>"
+                                                class="deletar btn btn-danger">Excluir</a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                        <% if(lista_clientes=="" ){%>
+                                            <div class="alert alert-danger">Lista Vazia</div>
+                                            <% } %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12 justify-content-center">
+                        <a href="/cadastro" class="btn btn-dark">Cadastrar Clientes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</main>
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+<%- include('../partials/scripts'); %>
+</body>
+</html>

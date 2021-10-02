@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); %>    
+    <title>Banco</title>
+</head>
+<body>
+    <header>
+        <%- include('../partials/headerAdmin.ejs'); %>
+    </header>
+    <main>
+        <div class="container-fluid mb-5 pt-5 mt-5">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h1 class="mt-5 mb-5">Cadastro</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form class="form" action="/cadastro" method="POST">
+                        <div class="form-group">
+                            <label for="nomeCompleto">Nome Completo</label>
+                            <input class="form-control" type="text" id="nomeCompleto" name="nomeCompleto" placeholder="digite o nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="digite o cpf" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email"  id="email" name="email" placeholder="exemplo@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input class="form-control" type="password" id="senha" name="senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="agencia">Agencia</label>
+                            <!-- INSERIR SELECT -->
+                            <!-- INSERIR SELECT -->
+                            <!-- INSERIR SELECT -->
+                            <!-- INSERIR SELECT -->
+                            <input class="form-control" type="text"
+                            id="agencia" name="agencia" placeholder="00000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="conta">Número da Conta</label>
+                            <input class="form-control" type="text" id="conta" name="conta" placeholder="Número da conta" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="saldo">Saldo</label>
+                            <input class="form-control" type="number" min="0" step="0.01" id="saldo" name="saldo" placeholder="digite o saldo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input class="form-control" type="text" id="cep" name="cep" placeholder="digite o CEP" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroCasa">Número da Casa</label>
+                            <input class="form-control" type="text" id="numeroCasa" name="numeroCasa" placeholder="digite o número da casa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="complemento">Complemento</label>
+                            <input class="form-control" type="text" id="complemento" name="complemento" placeholder="digite o complemento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input class="form-control" type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" required>
+                        </div>
+                        <input type="hidden" name="status" value="true">
+                        <input class="btn btn-success" type="submit" value="Salvar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+</body>
+</html>
